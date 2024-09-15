@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychometric Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #064E3B;
+        }
+        #startTestButton {
+            width: 200px;
+            padding: 12px;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            background-color: #65A30D;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #startTestButton:hover {
+            background-color: #55810D;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Psychometric Test</h1>
+        <button id="startTestButton">Start Test</button>
+    </div>
+
+    <script>
+        document.getElementById('startTestButton').addEventListener('click', function() {
+            const formLink = localStorage.getItem('googleFormLink');
+            if (formLink) {
+                window.open(formLink, '_blank');
+            } else {
+                alert('No Google Form link has been set.');
+            }
+        });
+    </script>
+</body>
+</html>

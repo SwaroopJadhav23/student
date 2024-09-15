@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 100px auto 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #064E3B;
+        }
+        #loadingMessage {
+            display: none;
+            background-color: #FFA500;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            text-align: center;
+            color: white;
+            border-radius: 6px;
+        }
+        #message {
+            display: none;
+            font-size: 16px;
+            margin-top: 15px;
+            text-align: center;
+        }
+        .marksheet {
+            margin-bottom: 20px;
+        }
+        .marksheet table {
+            width: 100%;
+            margin-bottom: 10px;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        .marksheet th, .marksheet td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .marksheet th {
+            background-color: #064E3B;
+            color: white;
+            font-weight: bold;
+        }
+        .marksheet tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: #064E3B;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background-color: #065f4b;
+            border-radius: 4px;
+        }
+
+        /* Push the Psychometric link to the right */
+        .navbar .right {
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar at the top -->
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="psychometric.html" class="right">Psychometric</a> <!-- Link to the psychometric test page -->
+    </div>
+
+    <div class="container">
+        <h1>Student Results</h1>
+        <div id="loadingMessage">Loading, please wait...</div>
+        <div id="message" class="hidden"></div>
+        <div id="resultsContainer"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="student.js"></script>
+</body>
+</html>
